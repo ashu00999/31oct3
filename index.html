@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advance Happy Birthday Mehak ❤️‍🩹</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #fff2f5;
+  text-align: center;
+  background: linear-gradient(145deg, #190d20, #451b38, #170f25);
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(92%, 620px);
+  margin: auto;
+  padding: 35px 0 45px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: #ffd3e0;
+  font-size: clamp(2.1rem, 8vw, 3.5rem);
+  text-shadow: 0 0 22px #ff6b9d66;
+  margin-bottom: 8px;
+}
+
+h2 { color: #ffc2d6; }
+p { line-height: 1.9; }
+
+.subtitle {
+  color: #f6c6d7;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.card {
+  margin: 25px 0;
+  padding: 25px 20px;
+  border: 1px solid #ffffff25;
+  border-radius: 22px;
+  background: #ffffff0d;
+  box-shadow: 0 10px 40px #00000030;
+  backdrop-filter: blur(8px);
+}
+
+.heart {
+  font-size: 43px;
+  margin: 15px;
+  animation: heartbeat 2.3s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+.envelope {
+  font-size: 65px;
+  cursor: pointer;
+  transition: transform .3s;
+  display: inline-block;
+  filter: drop-shadow(0 0 12px #ff9fca55);
+}
+
+.envelope:hover {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.advance-badge {
+  display: inline-block;
+  padding: 9px 17px;
+  border: 1px solid #ffb5d0;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffffff16, #ff8db826);
+  color: #ffe0eb;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 0 18px #ff82b533;
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 8px #ff82b533; }
+  to { box-shadow: 0 0 22px #ff82b588; }
+}
+
+.advance-message {
+  padding: 5px 0;
+  color: #ffe0e9;
+  font-size: 1.08rem;
+  line-height: 2;
+}
+
+.sparkle {
+  color: #ffd4e3;
+  letter-spacing: 7px;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.birthday-date {
+  color: #ffe0e9;
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: .5px;
+  text-shadow: 0 0 12px #ff82b555;
+}
+
+/* LIVE COUNTDOWN */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin: 24px 0 18px;
+}
+
+.time-box {
+  padding: 15px 5px;
+  border: 1px solid #ffb5d044;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #ffb5d019, #ffffff08);
+  box-shadow: inset 0 1px 0 #ffffff12, 0 6px 18px #00000020;
+}
+
+.time-number {
+  display: block;
+  color: #ffe1ec;
+  font-size: clamp(1.45rem, 6vw, 2.15rem);
+  font-weight: bold;
+  text-shadow: 0 0 12px #ff82b566;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-label {
+  display: block;
+  color: #eeb9cd;
+  font-size: 11px;
+  margin-top: 7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#countdown-status {
+  color: #f6c6d7;
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+#birthday-surprise {
+  display: none;
+  padding: 18px 12px;
+  margin-top: 18px;
+  border: 1px solid #ffb5d066;
+  border-radius: 17px;
+  background: #ff8db819;
+  animation: appear .8s ease;
+}
+
+#birthday-surprise.show { display: block; }
+
+/* LETTER */
+#letter {
+  display: none;
+  text-align: left;
+  padding: 20px;
+  border-radius: 15px;
+  background: #fff0f4;
+  color: #53273c;
+  line-height: 1.9;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  margin-top: 22px;
+  border: 1px solid #ffc1d8;
+  box-shadow: 0 8px 30px #00000025;
+}
+
+#letter.show {
+  display: block;
+  animation: appear .7s ease;
+}
+
+/* FANCY LETTER BUTTON */
+.letter-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  overflow: hidden;
+  padding: 15px 27px;
+  margin: 12px 0;
+  border: 1px solid #ffcee0;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff8db8, #d64e88, #87345f);
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: .3px;
+  box-shadow: 0 0 12px #ff82b566, 0 6px 20px #00000030,
+    inset 0 1px 2px #ffffff70;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.letter-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 40%;
+  height: 200%;
+  background: #ffffff55;
+  transform: rotate(25deg);
+  transition: left .65s ease;
+  pointer-events: none;
+}
+
+.letter-btn:hover::before { left: 130%; }
+
+.letter-btn:hover {
+  transform: translateY(-3px) scale(1.035);
+  box-shadow: 0 0 22px #ff82b599, 0 10px 28px #00000035;
+}
+
+.letter-btn:active { transform: scale(.97); }
+
+.last-message {
+  color: #ffe0e9;
+  font-style: italic;
+  white-space: pre-line;
+  line-height: 2;
+}
+
+.small-note {
+  font-size: 13px;
+  color: #eab8cb;
+}
+
+.six-years {
+  color: #ffe0e9;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 2;
+}
+
+footer {
+  padding: 25px 8px;
+  color: #f0bbce;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.fall {
+  position: fixed;
+  top: -50px;
+  z-index: 1;
+  pointer-events: none;
+  animation: falling linear forwards;
+}
+
+@keyframes falling {
+  to {
+    transform: translateY(115vh) rotate(240deg);
+    opacity: .1;
+  }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 360px) {
+  .countdown { gap: 5px; }
+  .time-box { padding: 12px 2px; }
+  .time-label { font-size: 9px; letter-spacing: .5px; }
+  .card { padding: 22px 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart, .advance-badge { animation: none; }
+  .letter-btn, .envelope { transition: none; }
+  .letter-btn::before { display: none; }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+  <div class="heart">❤️‍🩹</div>
+
+  <div class="advance-badge">
+    ✨ A LITTLE WISH BEFORE YOUR SPECIAL DAY ✨
+  </div>
+
+  <h1 id="main-heading">Advance Happy Birthday</h1>
+  <h2>Mehak 🎂💗</h2>
+
+  <p class="subtitle">
+    Tumhare special day se pehle hi,<br>
+    meri taraf se tumhe dher saari wishes. 🌷
+  </p>
+
+  <!-- EXACT BIRTHDAY DATE AND COUNTDOWN -->
+  <div class="card">
+    <div class="sparkle">✦ ✧ ✦</div>
+    <h2 id="countdown-heading">⏳ Bas itna intezaar aur...</h2>
+
+    <p class="birthday-date">🎂 31 October 2026 🎂</p>
+
+    <div class="countdown" id="countdown">
+      <div class="time-box">
+        <span class="time-number" id="days">--</span>
+        <span class="time-label">Days</span>
+      </div>
+      <div class="time-box">
+        <span class="time-number" id="hours">--</span>
+        <span class="time-label">Hours</span>
+      </div>
+      <div class="time-box">
+        <span class="time-number" id="minutes">--</span>
+        <span class="time-label">Minutes</span>
+      </div>
+      <div class="time-box">
+        <span class="time-number" id="seconds">--</span>
+        <span class="time-label">Seconds</span>
+      </div>
+    </div>
+
+    <p id="countdown-status">
+      Har guzarta pal tumhare special day ke kareeb le ja raha hai. 🌙
+    </p>
+
+    <div id="birthday-surprise">
+      <div class="heart">🎂❤️‍🩹</div>
+      <h2>Today Is Your Special Day, Mehak! 🎉</h2>
+      <p class="advance-message">
+        Aaj ka din tumhare naam.<br>
+        Tumhari zindagi khushiyon, sukoon aur pyaar se bhari rahe.<br>
+        Happy Birthday, Mehak! 🌷💗
+      </p>
+    </div>
+
+    <div class="sparkle">✧ ♡ ✧</div>
+  </div>
+
+  <!-- ADVANCE BIRTHDAY WISH -->
+  <div class="card">
+    <div class="sparkle">✦ ✧ ✦</div>
+    <h2>🎂 Tumhare liye ek advance wish</h2>
+
+    <p class="advance-message">
+      Tumhara birthday abhi aaya nahi hai,<br>
+      lekin tumhare liye dua karne ka mann aaj hi hua.<br><br>
+
+      Advance mein wish kar raha hoon,<br>
+      kyunki kabhi tumhara special day<br>
+      mere liye bhi saal ka sabse special din hua karta tha. ❤️‍🩹<br><br>
+
+      Dua hai tumhari zindagi mein itni khushiyan aayein<br>
+      ki tumhe kabhi udaas rehne ki wajah na mile.<br>
+      Tumhare chehre ki muskurahat kabhi kam na ho<br>
+      aur tumhare saare sapne poore hon. 🌸
+    </p>
+
+    <p class="small-note">Advance Happy Birthday, Mehak! 🥀❤️‍🩹</p>
+    <div class="sparkle">✧ ♡ ✧</div>
+  </div>
+
+  <!-- SIX YEARS OF MEMORIES -->
+  <div class="card">
+    <h2>🥀 6 saal ki kahani</h2>
+
+    <p class="six-years">
+      6 saal tak tumhe apni zindagi ka hissa samjha,<br>
+      tumhare saath na jaane kitne sapne sajaaye.<br>
+      Kabhi socha nahi tha ki ek din<br>
+      itni saari yaadein hongi, par tum saath nahi.<br><br>
+
+      Waqt badal gaya, humare rishte ka naam badal gaya,<br>
+      par un 6 saalon ki ahmiyat mere liye kam nahi hui.<br>
+      Tum meri kahani ka woh hissa ho,<br>
+      jise bhula paana shayad aasaan nahi hoga. ❤️‍🩹
+    </p>
+
+    <p class="small-note">
+      Kuch rishte khatam ho jaate hain, par unki yaadein nahi. 🌙
+    </p>
+  </div>
+
+  <!-- MY SIDE OF THE STORY -->
+  <div class="card">
+    <h2>🥀 Tumhe lagta hai ki, main hi galat tha na aur hoon ?</h2>
+
+    <p class="last-message">
+Haan chalo, maan liya maine...
+Main cheater hoon, jaisa tumne kaha.
+Main toxic hoon, jaisa tumne samjha.
+Over possessive hoon, yeh bhi tumne kaha.
+
+Chalo, maan liya ki main tumhare liye
+toxic tha, over possessive tha...
+Lekin kabhi yeh bhi socha ki aakhir kyun?
+Meri feelings ke peeche ki wajah kya thi?
+
+Main tumhe khone se darta tha,
+shayad isi darr mein kai baar
+apni feelings sahi tareeke se keh nahi paaya.
+Jahan mujhe tum par bharosa jatana chahiye tha,
+wahan main apni insecurity dikha baitha.
+Bas mein tumhe logo ki gandi nazron se bachana chahta tha,
+magar tumne mujhe hi galat samjha.
+koi baat nahi yaar ki magar bas mein yeh chata tha ki
+agar mein tumhare sath puri life spend karna chahta tha 
+mein bs ussi chiz ko leke mein tumse yeh sab karta tha aur koi wajah nahi hai.
+but afsos mein hi galat sabit hua, tumne na jane dusre ko leke mujhe kya kya kaha, 
+kya kya bola, but chlo thik hai....  
+
+Ho sakta hai meri kuch baatein galat rahi hon,
+ho sakta hai maine tumhe hurt bhi kiya ho.
+Main apni galtiyon se inkaar nahi karta,
+lekin meri har feeling jhoothi bhi nahi thi.
+
+Tumne meri har kami dekhi,
+meri har galti ko yaad rakha,
+lekin kabhi yeh jaanne ki koshish ki
+ki main aisa kyun ho gaya tha?
+
+Tumne mujhe galat samjha,
+shayad meri baat poori sune bina.
+Cheater kehna aasaan tha,
+lekin us lafz ka dard mere liye kya tha,
+shayad tumne kabhi mehsoos nahi kiya.
+
+Main yeh nahi kehta ki main perfect tha,
+bas itna chahta tha ki meri galti dekhne se pehle
+ek baar meri niyat bhi samajh leti.
+
+Pyaar mein galtiyan mujhse bhi hui hongi,
+par kya meri poori kahani
+sirf meri galtiyon tak hi reh gayi?
+
+Aaj bhi tumse koi badla nahi chahiye,
+na tumhe galat saabit karna hai.
+Bas dukh itna hai ki jis insaan ke saamne
+maine apna dil khol kar rakha,
+usi ke saamne mujhe apni mohabbat
+sabit karne ki zaroorat pad gayi.
+
+Chalo, tumhari nazar mein main galat sahi,
+main apni galtiyon se seekh lunga.
+Bas kaash tum ek baar meri jagah hoti,
+toh shayad meri khamoshi ke peeche ka dard
+tumhe bhi samajh aata.
+
+Main tumhari zindagi mein wapas aane ki zid nahi karta,
+bas itna chahta hoon ki meri yaadon ko
+sirf ek galat insaan ki kahani samajh kar
+kabhi yaad mat karna.
+
+Kyunki main bhi insaan tha,
+mujhse bhi galtiyan hui,
+lekin jo kuch mehsoos kiya,
+woh mere liye jhootha nahi tha. 
+
+ab bas itna kahunga yrr ki tumhe ab jo life partner mile 
+mujhse lakh guna acha mile jo toxic na ho, over possesive na ho 
+tumhe kisi chiz ke liye roke toke nahi hmm..
+jo tum karna chahti ho karne de voh tumhe ❤️‍🩹
+       bas ek aakhri baat kahunga ki.....
+    </p>
+
+    <p class="small-note">
+      Har kahani mein kuch baatein adhoori reh jaati hain. 🌙
+    </p>
+  </div>
+
+  <!-- BIRTHDAY LETTER -->
+  <div class="card">
+    <h2>💌 A little letter</h2>
+
+    <p class="subtitle">
+      Tumhare birthday ke liye ek chhota sa letter...
+    </p>
+
+    <div class="envelope"
+         onclick="openLetter()"
+         role="button"
+         tabindex="0"
+         aria-label="Open birthday letter"
+         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLetter();}">
+      💌
+    </div>
+
+    <br>
+
+    <button class="letter-btn" onclick="openLetter()">
+      <span>💌</span>
+      <span>Open Your Letter</span>
+      <span>💗</span>
+    </button>
+
+    <div id="letter">Dear Mehak,
+
+Advance Happy Birthday! 🎂❤️‍🩹
+
+Tumhare special day se pehle hi
+tumhe ek baat kehna chahta hoon.
+
+Zindagi tumhe woh saari khushiyan de,
+jinki tumne kabhi khwahish ki ho.
+
+Tumhari muskurahat hamesha bani rahe,
+tumhare sapne poore hon,
+aur tumhari zindagi mein aise log rahen
+jo tumhari kadar karein.
+
+Hamare beech jo bhi raha,
+uski achhi yaadon ke liye thank you.
+Main dil se tumhare liye achha hi chahta hoon.
+
+Chahe waqt kitna bhi badal jaaye,
+kuch yaadein hamesha dil ke kareeb rehti hain.
+Hamare saath bitaaye hue 6 saal
+meri zindagi ka ek khaas hissa rahenge.
+
+Meri dua hai ki tum hamesha khush raho,
+aur tumhari zindagi achhe lamhon se bhari rahe.
+
+Apna khayal rakhna
+aur zindagi mein hamesha aage badhte rehna.
+
+Once again, Advance Happy Birthday, Mehak. 🌷
+
+— Ashutosh ❤️‍🩹</div>
+  </div>
+
+  <!-- LAST MESSAGE -->
+  <div class="card">
+    <h2>❤️‍🩹 Dil ki ek aakhri baat</h2>
+
+    <p class="last-message">
+      Tumse koi narazgi nahi hai, bas khud se thodi si
+      shikayat hai ki maine tumhe apni duniya mein jitni
+      jagah di, shayad tumhari duniya mein meri utni jagah
+      thi hi nahi. Khair, jo pal achhe the unke liye dil se
+      thank you. Ab bas itna seekh raha hoon ki kisi ko apna
+      samajhne se pehle, ye bhi dekhna chahiye ki woh humein
+      samjh payega bhi hai ya nahi.
+    </p>
+
+    <p>— Ashutosh</p>
+    <p class="small-note">Your ex-boyfriend 💔</p>
+  </div>
+
+  <!-- FINAL ADVANCE WISH -->
+  <div class="card">
+    <div class="heart">❤️‍🩹</div>
+
+    <h2>🌙 Birthday se pehle aakhri wish</h2>
+
+    <p class="advance-message">
+      Shayad ab hum pehle jaise nahi rahe,<br>
+      lekin tumhare liye achha chahna<br>
+      meri un yaadon ka hissa hai<br>
+      jinhe main kabhi bura nahi kehna chahta.<br><br>
+
+      Tumhara aane wala har saal<br>
+      pichhle saal se zyada khoobsurat ho.<br>
+      Khush rehna, aur safe rahena Mehak. 🌷
+    </p>
+
+    <p class="small-note">
+      Advance Happy Birthday once again! 🎂❤️‍🩹
+    </p>
+  </div>
+
+  <p class="subtitle">
+    Some chapters end, but good wishes remain. 🌙
+  </p>
+
+  <footer>
+    Made with a little love and a lot of memories.<br>
+    Advance Happy Birthday, Mehak ❤️‍🩹🎂<br>
+    31 October 2026
+  </footer>
+
+</main>
+
+<script>
+/* OPEN AND CLOSE THE LETTER */
+function openLetter() {
+  const letter = document.getElementById("letter");
+  letter.classList.toggle("show");
+
+  if (letter.classList.contains("show")) {
+    letter.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+}
+
+/* COUNTDOWN TO 31 OCTOBER 2026, MIDNIGHT LOCAL TIME */
+const birthdayDate = new Date(2026, 9, 31, 0, 0, 0);
+
+function updateCountdown() {
+  const now = new Date();
+  const difference = birthdayDate.getTime() - now.getTime();
+
+  const heading = document.getElementById("countdown-heading");
+  const status = document.getElementById("countdown-status");
+  const countdown = document.getElementById("countdown");
+  const surprise = document.getElementById("birthday-surprise");
+  const mainHeading = document.getElementById("main-heading");
+
+  if (difference <= 0) {
+    countdown.style.display = "none";
+    heading.textContent = "🎉 Aaj ka din tumhare naam!";
+    status.textContent = "Ab advance nahi — dil se Happy Birthday, Mehak! 🌷";
+    surprise.classList.add("show");
+    mainHeading.textContent = "Happy Birthday";
+    document.title = "Happy Birthday Mehak ❤️‍🩹";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  document.getElementById("days").textContent = String(days).padStart(2, "0");
+  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+
+  countdown.style.display = "grid";
+  surprise.classList.remove("show");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* FALLING HEARTS */
+function createFloat() {
+  const heart = document.createElement("div");
+  heart.className = "fall";
+
+  const symbols = [
+    "❤️‍🩹", "❤️‍🩹", "❤️‍🩹",
+    "💔", "💔", "💔"
+  ];
+
+  heart.textContent =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (16 + Math.random() * 18) + "px";
+
+  const duration = 7 + Math.random() * 5;
+  heart.style.animationDuration = duration + "s";
+
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), duration * 1000);
+}
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  setInterval(createFloat, 850);
+}
+</script>
+
+</body>
+</html>
+```
